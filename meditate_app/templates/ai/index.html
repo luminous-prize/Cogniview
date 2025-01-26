@@ -1,0 +1,53 @@
+{% extends "base.html" %}  <!--Inherits the template of base.html-->
+
+{% block content %}
+<!--Home Page-->
+<div> 
+    <p class="text-center"> <!--Text message displayed on the screen-->
+       <figure class="text-center"> <!--Makes the text appaear at the center of the screen-->
+            <blockquote class="blockquote"> <!--Displays the text in a quote-like manner-->
+            <p>Calm.ai - Your Go To Meditation App</p> <!--The message to be displayed-->
+            </blockquote>
+            <figcaption class="blockquote-footer"> <!--Footer of the blockquote-->
+            Embrace the power of AI in your journey of peace <!--Message to be dispayed at the footer of the quote-->
+            </figcaption>
+        </figure> 
+    </p>
+</div>
+<div class="row"> <!--The container containing the elements are displayed as a row with elements as its columns-->
+    <!--Image 1(GIF)-->
+    <div class="col"> 
+        {% load static %} <img src="{% static 'ai/images/meditation.gif' %}" class="card-img-top" alt="Meditating", style="width: 100%; 
+                height: 100%; display: block;">
+    </div>
+    <!--Box 1-->
+    <div class="col">
+        <div class="row", style="float: right;"> 
+            
+            <div class="card col" style="width: 18rem; height: 60%; margin-right: 2rem; margin-top: 5rem;">
+                
+                {% load static %} <img src="{% static 'ai/images/calm2.png' %}" class="card-img-top" alt="Meditating", style="width: auto; 
+                height: 12rem; display: block; margin-left: 2rem; margin-right: 2rem; margin-top: 2rem; margin-right: 2rem;">
+                <div class="card-body">
+                <h5 class="card-title">Meditate</h5>
+                <p class="card-text">This app will help you with your distractions and let's you Meditate peacefully.</p>
+                <a href="/meditate" class="btn btn-primary">Start your Meditation</a>
+                </div>
+            </div>
+            <!--Box2-->
+            <div class="card col" style="width: 18rem; height: 60%; margin-top: 5rem;">
+            
+                {% load static %} <img src="{% static 'ai/images/Calm.png' %}" class="card-img-top" alt="Emotional Health", style="width: auto; 
+                height: 12rem; display: block; margin-left: 2rem; margin-right: 2rem; margin-top: 2rem; margin-right: 2rem;">
+                <div class="card-body">
+                <h5 class="card-title">Emotional Health</h5>
+                <p class="card-text">This app will help you predict your Emotional Health.</p>
+                <a href="/pred_health" class="btn btn-primary">Check your Emotional Health</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %} <!--Inherits the template of base.html-->
+
+{% block content %}
+
+<div class='row' style="height: 100%; display: flex; justify-content: center; align-items: center; text-align: center; ">
+    <div style="border: 2px; border-color: black ; margin-bottom: 10px; margin-top: 20px;">
+        <img src="{% url 'video_feed' %}"> <!--HttpResponse of gen(VideoCamera())-->
+    </div>
+
+
+
+
+    <!--Button to restart meditation-->
+    <div style="width: 50%;">
+        <a class="btn btn-primary" href="/meditate" role="button" style="width: 20%;">Restart your meditation</a>
+    </div>
+    
+</div>
+
+{% endblock content %}

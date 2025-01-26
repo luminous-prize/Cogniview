@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Analysis Report for {{profile}}</h1>
+
+<div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Meditation Sessions</h3>
+          <h4 class="card-text" style=" padding:1em; text-align: center;">{{m_count}} Sessions</h4>
+          <a href="/meditate" class="btn btn-primary" style="display: flex; justify-content: center; align-items: center;">Start Meditation</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Emotional Health Recorded</h3>
+          <h4 class="card-text" style=" padding:1em; text-align: center;">{{h_count}} Records</h4>
+          <a href="/pred_health" class="btn btn-primary" style="display: flex; justify-content: center; align-items: center;">Record Emotional Health</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<h3>Meditation Sessions</h3>
+
+    {% if m_count%}
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Distracted</th>
+            <th scope="col">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in meditation %}
+            <tr>
+                <td>{{i.date_created}}</td>
+                <td>{{i.duration}}</td>
+                <td>{{i.no_distracted}}</td>
+                <td>{{i.score}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    {% else %}
+
+    <h5>No data availalbe</h5>
+
+    {% endif %}
+    
+</table>
+
+<h3>Emotional Health</h3>
+
+    {% if h_count%}
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Emotions</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in health %}
+            <tr>
+                <td>{{i.date_created}}</td>
+                <td>{{i.duration}}</td>
+                <td>{{i.gender}}</td>
+                <td>{{i.emotions}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    
+    {% else %}
+    
+        <h5>No data availalbe</h5>
+    
+    {% endif %}
+
+</table>
+    
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %} <!--Inherits the template of base.html-->
+
+{% block content %}
+
+<div style="padding: 20%;">
+  <div class='row' style="top: 50%; left: 50%; display: flex; justify-content: center; align-items: center; text-align: center; ">
+    <form class="form-inline" method="post">
+        {% csrf_token %}
+        <div class="form-group mx-sm-3 mb-2">
+          <label class="sr-only">Duration</label>
+          <input type="text" name="duration" placeholder="in seconds.." required="true">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Start Meditation</button>
+    </form>
+  </div>
+</div>
+  
+
+
+{% endblock content %}
